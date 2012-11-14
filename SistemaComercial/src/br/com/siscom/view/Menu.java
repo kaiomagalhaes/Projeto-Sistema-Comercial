@@ -3,7 +3,6 @@
  *
  * Created on 12 de Novembro de 2012, 09:53
  */
-
 package br.com.siscom.view;
 
 /**
@@ -11,12 +10,12 @@ package br.com.siscom.view;
  * @author  Kaio
  */
 public class Menu extends javax.swing.JFrame {
-    
+
     /** Creates new form Menu */
     public Menu() {
         initComponents();
     }
-    
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -100,6 +99,11 @@ public class Menu extends javax.swing.JFrame {
         jMnuClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         jMnuClientes.setMnemonic('C');
         jMnuClientes.setText("Clientes");
+        jMnuClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuClientesActionPerformed(evt);
+            }
+        });
         mnuCadastro.add(jMnuClientes);
 
         jMnuFornecedores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
@@ -110,6 +114,11 @@ public class Menu extends javax.swing.JFrame {
         jMnuContaBancaria.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         jMnuContaBancaria.setMnemonic('B');
         jMnuContaBancaria.setText("Conta Bancária");
+        jMnuContaBancaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuContaBancariaActionPerformed(evt);
+            }
+        });
         mnuCadastro.add(jMnuContaBancaria);
         mnuCadastro.add(jSeparator1);
 
@@ -138,6 +147,11 @@ public class Menu extends javax.swing.JFrame {
         jMnuCartoes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         jMnuCartoes.setMnemonic('r');
         jMnuCartoes.setText("Cartões");
+        jMnuCartoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuCartoesActionPerformed(evt);
+            }
+        });
         mnuCadastro.add(jMnuCartoes);
 
         jMnuPlanoContas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
@@ -148,6 +162,11 @@ public class Menu extends javax.swing.JFrame {
         jMnuTipoPagRecebimento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
         jMnuTipoPagRecebimento.setMnemonic('t');
         jMnuTipoPagRecebimento.setText("Tipo de pagamento/recebimento");
+        jMnuTipoPagRecebimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuTipoPagRecebimentoActionPerformed(evt);
+            }
+        });
         mnuCadastro.add(jMnuTipoPagRecebimento);
         mnuCadastro.add(jSeparator4);
 
@@ -264,18 +283,53 @@ public class Menu extends javax.swing.JFrame {
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         setBounds((screenSize.width-640)/2, (screenSize.height-457)/2, 640, 457);
     }// </editor-fold>//GEN-END:initComponents
-    
+    private void jMnuContaBancariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuContaBancariaActionPerformed
+        String[] args = new String[1];
+        args[0] = "Cadastro das constas bancárias";
+
+        BancoView.main(args);
+        
+        
+    }//GEN-LAST:event_jMnuContaBancariaActionPerformed
+
+    private void jMnuCartoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuCartoesActionPerformed
+
+        String[] args = new String[1];
+        args[0] = "Relação dos cartões cadastrados";
+
+        CartaoView.main(args);
+        
+    }//GEN-LAST:event_jMnuCartoesActionPerformed
+
+    private void jMnuTipoPagRecebimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuTipoPagRecebimentoActionPerformed
+
+        String[] args = new String[1];
+        args[0] = "Relação dos tipos de pagamento/recebimento";
+
+        TipoPgtoView.main(args);
+        
+    }//GEN-LAST:event_jMnuTipoPagRecebimentoActionPerformed
+
+    private void jMnuClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuClientesActionPerformed
+        
+        String[] args = new String[1];
+        args[0] = "Cadastro de cliente";
+
+        ClienteView.main(args);
+        
+    }//GEN-LAST:event_jMnuClientesActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new Menu().setVisible(true);
             }
         });
     }
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu MnuCompras;
     private javax.swing.JMenu MnuControleEstoque;
@@ -322,5 +376,4 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuBar mnuSuperior;
     private javax.swing.JMenu mnuUtilitarios;
     // End of variables declaration//GEN-END:variables
-    
 }

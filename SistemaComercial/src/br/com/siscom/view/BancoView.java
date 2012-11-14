@@ -1,5 +1,6 @@
 package br.com.siscom.view;
 
+import br.com.siscom.bean.Banco;
 import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,13 +32,11 @@ public class BancoView extends JPanel {
         list = org.jdesktop.observablecollections.ObservableCollections.observableList(query.getResultList());
         masterScrollPane = new javax.swing.JScrollPane();
         masterTable = new javax.swing.JTable();
-        codBancoLabel = new javax.swing.JLabel();
         nomeBancoLabel = new javax.swing.JLabel();
         agenciaBancoLabel = new javax.swing.JLabel();
         contaBancoLabel = new javax.swing.JLabel();
         gerenteBancoLabel = new javax.swing.JLabel();
         foneBancoLabel = new javax.swing.JLabel();
-        codBancoField = new javax.swing.JTextField();
         nomeBancoField = new javax.swing.JTextField();
         agenciaBancoField = new javax.swing.JTextField();
         contaBancoField = new javax.swing.JTextField();
@@ -51,10 +50,7 @@ public class BancoView extends JPanel {
         FormListener formListener = new FormListener();
 
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, masterTable);
-        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${codBanco}"));
-        columnBinding.setColumnName("Cod Banco");
-        columnBinding.setColumnClass(Integer.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nomeBanco}"));
+        org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nomeBanco}"));
         columnBinding.setColumnName("Nome Banco");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${agenciaBanco}"));
@@ -70,10 +66,9 @@ public class BancoView extends JPanel {
         columnBinding.setColumnName("Fone Banco");
         columnBinding.setColumnClass(String.class);
         bindingGroup.addBinding(jTableBinding);
+        jTableBinding.bind();
 
         masterScrollPane.setViewportView(masterTable);
-
-        codBancoLabel.setText("Cod Banco:");
 
         nomeBancoLabel.setText("Nome Banco:");
 
@@ -85,13 +80,7 @@ public class BancoView extends JPanel {
 
         foneBancoLabel.setText("Fone Banco:");
 
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.codBanco}"), codBancoField, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        binding.setSourceUnreadableValue(null);
-        bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), codBancoField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.nomeBanco}"), nomeBancoField, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.nomeBanco}"), nomeBancoField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue(null);
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), nomeBancoField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
@@ -121,16 +110,16 @@ public class BancoView extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), foneBancoField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        saveButton.setText("Save");
+        saveButton.setText("Salvar");
         saveButton.addActionListener(formListener);
 
-        refreshButton.setText("Refresh");
+        refreshButton.setText("Atualizar");
         refreshButton.addActionListener(formListener);
 
-        newButton.setText("New");
+        newButton.setText("Novo");
         newButton.addActionListener(formListener);
 
-        deleteButton.setText("Delete");
+        deleteButton.setText("Excluir");
         deleteButton.setEnabled(false);
         deleteButton.addActionListener(formListener);
 
@@ -138,36 +127,32 @@ public class BancoView extends JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(newButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(deleteButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(refreshButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(saveButton)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(codBancoLabel)
-                    .addComponent(nomeBancoLabel)
-                    .addComponent(agenciaBancoLabel)
-                    .addComponent(contaBancoLabel)
-                    .addComponent(gerenteBancoLabel)
-                    .addComponent(foneBancoLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(codBancoField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                    .addComponent(nomeBancoField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                    .addComponent(agenciaBancoField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                    .addComponent(contaBancoField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                    .addComponent(gerenteBancoField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                    .addComponent(foneBancoField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(newButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deleteButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(refreshButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(saveButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nomeBancoLabel)
+                            .addComponent(agenciaBancoLabel)
+                            .addComponent(contaBancoLabel)
+                            .addComponent(gerenteBancoLabel)
+                            .addComponent(foneBancoLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nomeBancoField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                            .addComponent(agenciaBancoField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                            .addComponent(contaBancoField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                            .addComponent(gerenteBancoField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                            .addComponent(foneBancoField, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)))
+                    .addComponent(masterScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -175,13 +160,9 @@ public class BancoView extends JPanel {
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(codBancoLabel)
-                    .addComponent(codBancoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nomeBancoLabel)
@@ -254,9 +235,9 @@ public class BancoView extends JPanel {
     
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         int[] selected = masterTable.getSelectedRows();
-        List<br.com.siscom.view.Banco> toRemove = new ArrayList<br.com.siscom.view.Banco>(selected.length);
+        List<Banco> toRemove = new ArrayList<Banco>(selected.length);
         for (int idx=0; idx<selected.length; idx++) {
-            br.com.siscom.view.Banco b = list.get(masterTable.convertRowIndexToModel(selected[idx]));
+            Banco b = list.get(masterTable.convertRowIndexToModel(selected[idx]));
             toRemove.add(b);
             entityManager.remove(b);
         }
@@ -264,7 +245,7 @@ public class BancoView extends JPanel {
     }//GEN-LAST:event_deleteButtonActionPerformed
     
     private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
-        br.com.siscom.view.Banco b = new br.com.siscom.view.Banco();
+        Banco b = new Banco();
         entityManager.persist(b);
         list.add(b);
         int row = list.size()-1;
@@ -281,8 +262,6 @@ public class BancoView extends JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField agenciaBancoField;
     private javax.swing.JLabel agenciaBancoLabel;
-    private javax.swing.JTextField codBancoField;
-    private javax.swing.JLabel codBancoLabel;
     private javax.swing.JTextField contaBancoField;
     private javax.swing.JLabel contaBancoLabel;
     private javax.swing.JButton deleteButton;
@@ -291,7 +270,7 @@ public class BancoView extends JPanel {
     private javax.swing.JLabel foneBancoLabel;
     private javax.swing.JTextField gerenteBancoField;
     private javax.swing.JLabel gerenteBancoLabel;
-    private java.util.List<br.com.siscom.view.Banco> list;
+    private java.util.List<br.com.siscom.bean.Banco> list;
     private javax.swing.JScrollPane masterScrollPane;
     private javax.swing.JTable masterTable;
     private javax.swing.JButton newButton;
@@ -308,7 +287,7 @@ public class BancoView extends JPanel {
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new BancoView());
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+              //  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
             }

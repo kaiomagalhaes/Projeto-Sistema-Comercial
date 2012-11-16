@@ -109,6 +109,11 @@ public class Menu extends javax.swing.JFrame {
         jMnuFornecedores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
         jMnuFornecedores.setMnemonic('F');
         jMnuFornecedores.setText("Fornecedores");
+        jMnuFornecedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuFornecedoresActionPerformed(evt);
+            }
+        });
         mnuCadastro.add(jMnuFornecedores);
 
         jMnuContaBancaria.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
@@ -318,6 +323,15 @@ public class Menu extends javax.swing.JFrame {
         ClienteView.main(args);
         
     }//GEN-LAST:event_jMnuClientesActionPerformed
+
+    private void jMnuFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuFornecedoresActionPerformed
+        
+        String[] args = new String[1];
+        args[0] = "Cadastro de fornecedores";
+
+        FornecedorView.main(args);
+        
+    }//GEN-LAST:event_jMnuFornecedoresActionPerformed
 
     /**
      * @param args the command line arguments

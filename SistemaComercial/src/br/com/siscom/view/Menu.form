@@ -29,6 +29,9 @@
                 <Property name="mnemonic" type="int" value="70"/>
                 <Property name="text" type="java.lang.String" value="Fornecedores"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMnuFornecedoresActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMnuContaBancaria">
               <Properties>

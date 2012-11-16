@@ -1,6 +1,5 @@
 package br.com.siscom.view;
 
-import br.com.siscom.bean.Cliente;
 import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -237,7 +236,12 @@ public class ClienteView extends JPanel {
                 .addGap(22, 22, 22))
         );
 
-        jButton1.setText("Editar cliente");
+        jButton1.setText("Editar");
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), jButton1, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        jButton1.addActionListener(formListener);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -249,9 +253,9 @@ public class ClienteView extends JPanel {
                 .addComponent(newButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(deleteButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(211, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
@@ -316,6 +320,9 @@ public class ClienteView extends JPanel {
             else if (evt.getSource() == newDetailButton) {
                 ClienteView.this.newDetailButtonActionPerformed(evt);
             }
+            else if (evt.getSource() == jButton1) {
+                ClienteView.this.jButton1ActionPerformed(evt);
+            }
         }
     }// </editor-fold>//GEN-END:initComponents
     
@@ -326,6 +333,7 @@ public class ClienteView extends JPanel {
                 boolean enabled = (masterTable.getSelectedRow() != -1);
                 deleteButton.setEnabled(enabled);
                 newDetailButton.setEnabled(enabled);
+
             } else {
                 deleteDetailButton.setEnabled(detailTable.getSelectedRow() != -1);
             }
@@ -391,29 +399,42 @@ public class ClienteView extends JPanel {
     }//GEN-LAST:event_deleteButtonActionPerformed
     
     private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
-        
-
-        Cliente C = new Cliente();
+        br.com.siscom.bean.Cliente C = new br.com.siscom.bean.Cliente();
         entityManager.persist(C);
         list.add(C);
         int row = list.size()-1;
         masterTable.setRowSelectionInterval(row, row);
         masterTable.scrollRectToVisible(masterTable.getCellRect(row, 0, true));
         
-        
-        JFrame frame = new JFrame();
-        ClienteEditView ce = new ClienteEditView(frame,false);
-        ce.setVisible(true);
+        //JFrame frame = new JFrame();
+        ClienteEditView ce = new ClienteEditView(null, true);
         ce.setRegistroAtual(C);
+        ce.setVisible(true);
         
-        
-        
+        if (ce.isConfirmaCliente()) {
+            saveButton.doClick();
+        } else {
+            refreshButton.doClick();
+        }
     }//GEN-LAST:event_newButtonActionPerformed
     
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         entityManager.getTransaction().commit();
         entityManager.getTransaction().begin();
     }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+               //JFrame frame = new JFrame();
+        ClienteEditView ce = new ClienteEditView(null, true);
+        ce.setRegistroAtual(list.get(masterTable.getSelectedRow()));
+        ce.setVisible(true);
+        
+        if (ce.isConfirmaCliente()) {
+            saveButton.doClick();
+        } else {
+            refreshButton.doClick();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

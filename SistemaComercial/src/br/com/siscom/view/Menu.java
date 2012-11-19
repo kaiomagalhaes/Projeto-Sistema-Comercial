@@ -130,11 +130,21 @@ public class Menu extends javax.swing.JFrame {
         jMnuUnidades.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
         jMnuUnidades.setMnemonic('U');
         jMnuUnidades.setText("Unidades");
+        jMnuUnidades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuUnidadesActionPerformed(evt);
+            }
+        });
         mnuCadastro.add(jMnuUnidades);
 
         jMnuProdutos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         jMnuProdutos.setMnemonic('P');
         jMnuProdutos.setText("Produtos");
+        jMnuProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuProdutosActionPerformed(evt);
+            }
+        });
         mnuCadastro.add(jMnuProdutos);
         mnuCadastro.add(jSeparator2);
 
@@ -332,6 +342,24 @@ public class Menu extends javax.swing.JFrame {
         FornecedorView.main(args);
         
     }//GEN-LAST:event_jMnuFornecedoresActionPerformed
+
+    private void jMnuUnidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuUnidadesActionPerformed
+       
+        String[] args = new String[1];
+        args[0] = "Cadastro de unidades";
+
+     UnidadeView.main(args);
+        
+    }//GEN-LAST:event_jMnuUnidadesActionPerformed
+
+    private void jMnuProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuProdutosActionPerformed
+       
+        String[] args = new String[1];
+        args[0] = "Cadastro de produtos";
+
+      ProdutoView.main(args);
+        
+    }//GEN-LAST:event_jMnuProdutosActionPerformed
 
     /**
      * @param args the command line arguments

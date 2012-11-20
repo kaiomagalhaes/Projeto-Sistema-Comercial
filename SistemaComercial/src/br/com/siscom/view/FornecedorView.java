@@ -12,6 +12,8 @@ import javax.swing.text.MaskFormatter;
 
 public class FornecedorView extends JPanel {
 
+   public static FornecedorView fv;
+    
     public FornecedorView() {
         initComponents();
         TableSelectionListener listener = new TableSelectionListener();
@@ -76,6 +78,7 @@ public class FornecedorView extends JPanel {
         jLabel1 = new javax.swing.JLabel();
         tfCpf = new javax.swing.JFormattedTextField();
         cnpjFornecedorField = new javax.swing.JFormattedTextField();
+        jButton2 = new javax.swing.JButton();
 
         FormListener formListener = new FormListener();
 
@@ -473,6 +476,9 @@ public class FornecedorView extends JPanel {
 
         abaPanel.addTab("tab2", jPanel2);
 
+        jButton2.setText("BuscarCEP");
+        jButton2.addActionListener(formListener);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -480,7 +486,10 @@ public class FornecedorView extends JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2))
                     .addComponent(abaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -489,7 +498,9 @@ public class FornecedorView extends JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(abaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -516,6 +527,9 @@ public class FornecedorView extends JPanel {
             else if (evt.getSource() == jButton1) {
                 FornecedorView.this.jButton1ActionPerformed(evt);
             }
+            else if (evt.getSource() == jButton2) {
+                FornecedorView.this.jButton2ActionPerformed(evt);
+            }
         }
 
         public void focusGained(java.awt.event.FocusEvent evt) {
@@ -528,11 +542,11 @@ public class FornecedorView extends JPanel {
         }
 
         public void focusLost(java.awt.event.FocusEvent evt) {
-            if (evt.getSource() == tfCpf) {
-                FornecedorView.this.cpfPerdeFoco(evt);
-            }
-            else if (evt.getSource() == jComboBox1) {
+            if (evt.getSource() == jComboBox1) {
                 FornecedorView.this.jComboBox1FocusLost(evt);
+            }
+            else if (evt.getSource() == tfCpf) {
+                FornecedorView.this.cpfPerdeFoco(evt);
             }
             else if (evt.getSource() == cnpjFornecedorField) {
                 FornecedorView.this.cnpjFornecedorFieldFocusLost(evt);
@@ -557,6 +571,26 @@ public class FornecedorView extends JPanel {
         public void mouseReleased(java.awt.event.MouseEvent evt) {
         }
     }// </editor-fold>//GEN-END:initComponents
+
+    public void setBairroFornecedorField(String bairroFornecedorField) {
+        this.bairroFornecedorField.setText(bairroFornecedorField);
+    }
+
+    public void setCepFornecedorField(String cepFornecedorField) {
+        this.cepFornecedorField.setText(cepFornecedorField);
+    }
+
+    public void setCidadeFornecedorField(String cidadeFornecedorField) {
+        this.cidadeFornecedorField.setText(cidadeFornecedorField);
+    }
+
+    public void setEnderecoFornecedorField(String enderecoFornecedorField) {
+        this.enderecoFornecedorField.setText(enderecoFornecedorField);
+    }
+
+    public void setUfFornecedorField(String ufFornecedorField) {
+        this.ufFornecedorField.setText(ufFornecedorField);
+    }
     private class TableSelectionListener implements ListSelectionListener {
 
         public void valueChanged(ListSelectionEvent e) {
@@ -710,7 +744,7 @@ public class FornecedorView extends JPanel {
     }//GEN-LAST:event_cnpjFornecedorFieldFocusGained
 
     private void cnpjFornecedorFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cnpjFornecedorFieldFocusLost
-    
+
         String Cnpj = cnpjFornecedorField.getText();
         String novoCnpj = " ";
 
@@ -721,18 +755,18 @@ public class FornecedorView extends JPanel {
             if (vetor[i] == '.' || vetor[i] == '/') {
 
                 vetor[i] = '-';
-                
+
             }
         }
-        
+
         String stringComBarras = String.valueOf(vetor);
 
         String[] vetorString = stringComBarras.split("-");
-        
-        novoCnpj = vetorString[0] + vetorString[1] + vetorString[2] + vetorString[3]+ vetorString[4];
+
+        novoCnpj = vetorString[0] + vetorString[1] + vetorString[2] + vetorString[3] + vetorString[4];
 
         if (novoCnpj.trim().length() != 0) {
-            
+
             try {
                 cnpjFornecedorField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###########")));
             } catch (java.text.ParseException ex) {
@@ -744,6 +778,20 @@ public class FornecedorView extends JPanel {
         }
 
     }//GEN-LAST:event_cnpjFornecedorFieldFocusLost
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+       BuscaCepView bc = new BuscaCepView();
+       bc.setVisible(true);
+       
+        String[] args = new String[1];
+        args[0] = "Cadastro das constas bancárias";
+
+       BuscaCepView.main(args);
+        
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane abaPanel;
@@ -771,6 +819,7 @@ public class FornecedorView extends JPanel {
     private javax.swing.JTextField foneFornecedorField;
     private javax.swing.JLabel foneFornecedorLabel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
@@ -796,32 +845,22 @@ public class FornecedorView extends JPanel {
     private javax.swing.JLabel ufFornecedorLabel;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
-    public static void
-
-main(final String[]
-
-args) {
+    public static void main(final String[] args) {
         EventQueue.invokeLater(new Runnable() {
 
-            public void
-
-run() {
+            public void run() {
                 JFrame frame = new JFrame();
-                frame.setContentPane
-
-(new FornecedorView());
+                fv = new FornecedorView();
+                frame.setContentPane(fv);
                 //     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.pack
-
-();
-                frame.setVisible
-
-(true);
-                frame.setTitle
-
-(args[0]);
+                frame.pack();
+                frame.setVisible(true);
+                frame.setTitle(args[0]);
             }
-
-});
+        });
     }
+    
+
+
+    
 }

@@ -33,6 +33,65 @@
         </Property>
       </Properties>
     </Component>
+    <Component class="javax.persistence.Query" name="unidadeQuery">
+      <Properties>
+        <Property name="query" type="java.lang.String" value="SELECT u FROM Unidade u"/>
+        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
+          <ComponentRef name="entityManager"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="java.util.List" name="unidadeList">
+      <Properties>
+        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
+          <ComponentRef name="unidadeQuery"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;br.com.siscom.bean.Unidade&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.persistence.Query" name="unidadeQuery1">
+      <Properties>
+        <Property name="query" type="java.lang.String" value="SELECT u FROM Unidade u"/>
+        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
+          <ComponentRef name="entityManager"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="java.util.List" name="unidadeList1">
+      <Properties>
+        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
+          <ComponentRef name="unidadeQuery1"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;br.com.siscom.bean.Unidade&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.persistence.Query" name="unidadeQuery2">
+      <Properties>
+        <Property name="query" type="java.lang.String" value="SELECT u FROM Unidade u"/>
+        <Property name="entityManager" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$EMProperty$EntityManagerEditor">
+          <ComponentRef name="entityManager"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="java.util.List" name="unidadeList2">
+      <Properties>
+        <Property name="query" type="java.lang.Object" editor="org.netbeans.modules.form.j2ee.J2EEPropertyModifier$QueryBeanProperty$QueryEditor">
+          <ComponentRef name="unidadeQuery2"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;br.com.siscom.bean.Unidade&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="br.com.siscom.renderer.UnidadeListCellRenderer" name="unidadeListCellRenderer1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="unidadeListCellRenderer1"/>
+      </Properties>
+    </Component>
   </NonVisualComponents>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -49,28 +108,33 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Component id="newButton" linkSize="1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="deleteButton" linkSize="1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="refreshButton" linkSize="1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="saveButton" linkSize="1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jPanel2" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="97" max="32767" attributes="0"/>
+                      <Component id="newButton" linkSize="1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="deleteButton" linkSize="1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="refreshButton" linkSize="1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="saveButton" linkSize="1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jPanel3" min="-2" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <Component id="jPanel1" min="-2" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel2" min="-2" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel3" min="-2" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -79,11 +143,11 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="72" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="saveButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="refreshButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -146,16 +210,16 @@
                       <Component id="estoqueProdutoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="criticoProdutoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="codProdutoField" alignment="0" pref="355" max="32767" attributes="0"/>
-                      <Component id="codUnidadeField" alignment="0" pref="355" max="32767" attributes="0"/>
-                      <Component id="codFornecedorField" alignment="0" pref="355" max="32767" attributes="0"/>
-                      <Component id="descricaoProdutoField" alignment="0" pref="355" max="32767" attributes="0"/>
-                      <Component id="vlrCompraProdutoField" alignment="0" pref="355" max="32767" attributes="0"/>
-                      <Component id="vlrVendaProdutoField" alignment="0" pref="355" max="32767" attributes="0"/>
-                      <Component id="estoqueProdutoField" alignment="0" pref="355" max="32767" attributes="0"/>
-                      <Component id="criticoProdutoField" alignment="0" pref="355" max="32767" attributes="0"/>
+                      <Component id="codProdutoField" alignment="0" pref="385" max="32767" attributes="0"/>
+                      <Component id="codFornecedorField" alignment="0" pref="385" max="32767" attributes="0"/>
+                      <Component id="descricaoProdutoField" alignment="0" pref="385" max="32767" attributes="0"/>
+                      <Component id="vlrCompraProdutoField" alignment="0" pref="385" max="32767" attributes="0"/>
+                      <Component id="vlrVendaProdutoField" alignment="0" pref="385" max="32767" attributes="0"/>
+                      <Component id="estoqueProdutoField" alignment="0" pref="385" max="32767" attributes="0"/>
+                      <Component id="criticoProdutoField" alignment="0" pref="385" max="32767" attributes="0"/>
+                      <Component id="jComboBox1" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -172,7 +236,7 @@
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="codUnidadeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="codUnidadeField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -210,22 +274,14 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="codUnidadeField">
-          <BindingProperties>
-            <BindingProperty name="text" source="masterTable" sourcePath="${selectedElement.codUnidade}" target="codUnidadeField" targetPath="text" updateStrategy="0" immediately="false">
-              <Property name="incompletePathValue" type="java.lang.String" value="null"/>
-            </BindingProperty>
-            <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="codUnidadeField" targetPath="enabled" updateStrategy="1" immediately="false"/>
-          </BindingProperties>
-        </Component>
         <Component class="javax.swing.JLabel" name="codUnidadeLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cod Unidade:"/>
+            <Property name="text" type="java.lang.String" value="Tipo de unidade:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="descricaoProdutoLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Descricao Produto:"/>
+            <Property name="text" type="java.lang.String" value="Descricao:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="vlrVendaProdutoField">
@@ -238,7 +294,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="codProdutoLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cod Produto:"/>
+            <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="codFornecedorLabel">
@@ -248,12 +304,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="estoqueProdutoLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Estoque Produto:"/>
+            <Property name="text" type="java.lang.String" value="Estoque:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="criticoProdutoLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Critico Produto:"/>
+            <Property name="text" type="java.lang.String" value="Estoque critico"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="estoqueProdutoField">
@@ -282,12 +338,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="vlrCompraProdutoLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Vlr Compra Produto:"/>
+            <Property name="text" type="java.lang.String" value="Vlr Compra:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="vlrVendaProdutoLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Vlr Venda Produto:"/>
+            <Property name="text" type="java.lang.String" value="Vlr Venda:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="criticoProdutoField">
@@ -314,6 +370,17 @@
             <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="descricaoProdutoField" targetPath="enabled" updateStrategy="1" immediately="false"/>
           </BindingProperties>
         </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="renderer" type="javax.swing.ListCellRenderer" editor="org.netbeans.modules.form.ComponentChooserEditor">
+              <ComponentRef name="unidadeListCellRenderer1"/>
+            </Property>
+          </Properties>
+          <BindingProperties>
+            <BindingProperty name="elements" source="unidadeList2" target="jComboBox1" targetPath="elements" updateStrategy="0" immediately="false"/>
+            <BindingProperty name="selectedItem" source="masterTable" sourcePath="${selectedElement.codUnidade}" target="jComboBox1" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
+          </BindingProperties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel2">
@@ -325,8 +392,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTextField1" pref="402" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jTextField1" min="-2" pref="383" max="-2" attributes="0"/>
+                  <EmptySpace pref="23" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -368,7 +435,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="masterScrollPane" pref="456" max="32767" attributes="0"/>
+                  <Component id="masterScrollPane" pref="470" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -444,11 +511,11 @@
               <BindingProperties>
                 <BindingProperty name="elements" source="list" target="masterTable" targetPath="elements" updateStrategy="0" immediately="true">
                   <Subbinding sourcePath="${codProduto}">
-                    <BindingParameter name="NAME" value="Cod Produto"/>
+                    <BindingParameter name="NAME" value="C&#xf3;digo"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
                   </Subbinding>
                   <Subbinding sourcePath="${codUnidade.descricaoUnidade}">
-                    <BindingParameter name="NAME" value="Cod Unidade"/>
+                    <BindingParameter name="NAME" value="Unidade"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
                   </Subbinding>
                   <Subbinding sourcePath="${codFornecedor}">
@@ -472,7 +539,7 @@
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
                   </Subbinding>
                   <Subbinding sourcePath="${criticoProduto}">
-                    <BindingParameter name="NAME" value="Critico Produto"/>
+                    <BindingParameter name="NAME" value="Estoque critico"/>
                     <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
                   </Subbinding>
                 </BindingProperty>

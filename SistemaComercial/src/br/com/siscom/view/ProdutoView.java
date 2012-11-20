@@ -30,12 +30,18 @@ public class ProdutoView extends JPanel {
         query = entityManager.createQuery("SELECT p FROM Produto p");
         list = org.jdesktop.observablecollections.ObservableCollections.observableList(query.getResultList());
         rowSorterToStringConverter1 = new br.com.siscom.converter.RowSorterToStringConverter();
+        unidadeQuery = entityManager.createQuery("SELECT u FROM Unidade u");
+        unidadeList = unidadeQuery.getResultList();
+        unidadeQuery1 = entityManager.createQuery("SELECT u FROM Unidade u");
+        unidadeList1 = unidadeQuery1.getResultList();
+        unidadeQuery2 = entityManager.createQuery("SELECT u FROM Unidade u");
+        unidadeList2 = unidadeQuery2.getResultList();
+        unidadeListCellRenderer1 = new br.com.siscom.renderer.UnidadeListCellRenderer();
         saveButton = new javax.swing.JButton();
         refreshButton = new javax.swing.JButton();
         newButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        codUnidadeField = new javax.swing.JTextField();
         codUnidadeLabel = new javax.swing.JLabel();
         descricaoProdutoLabel = new javax.swing.JLabel();
         vlrVendaProdutoField = new javax.swing.JTextField();
@@ -51,6 +57,7 @@ public class ProdutoView extends JPanel {
         criticoProdutoField = new javax.swing.JTextField();
         codFornecedorField = new javax.swing.JTextField();
         descricaoProdutoField = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox();
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -61,6 +68,8 @@ public class ProdutoView extends JPanel {
         FormListener formListener = new FormListener();
 
         rowSorterToStringConverter1.setTable(masterTable);
+
+        unidadeListCellRenderer1.setText("unidadeListCellRenderer1");
 
         saveButton.setText("Save");
         saveButton.addActionListener(formListener);
@@ -75,29 +84,23 @@ public class ProdutoView extends JPanel {
         deleteButton.setEnabled(false);
         deleteButton.addActionListener(formListener);
 
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.codUnidade}"), codUnidadeField, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        binding.setSourceUnreadableValue(null);
-        bindingGroup.addBinding(binding);
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), codUnidadeField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
-        bindingGroup.addBinding(binding);
+        codUnidadeLabel.setText("Tipo de unidade:");
 
-        codUnidadeLabel.setText("Cod Unidade:");
+        descricaoProdutoLabel.setText("Descricao:");
 
-        descricaoProdutoLabel.setText("Descricao Produto:");
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.vlrVendaProduto}"), vlrVendaProdutoField, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.vlrVendaProduto}"), vlrVendaProdutoField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue(null);
         bindingGroup.addBinding(binding);
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), vlrVendaProdutoField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        codProdutoLabel.setText("Cod Produto:");
+        codProdutoLabel.setText("Código:");
 
         codFornecedorLabel.setText("Cod Fornecedor:");
 
-        estoqueProdutoLabel.setText("Estoque Produto:");
+        estoqueProdutoLabel.setText("Estoque:");
 
-        criticoProdutoLabel.setText("Critico Produto:");
+        criticoProdutoLabel.setText("Estoque critico");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.estoqueProduto}"), estoqueProdutoField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue(null);
@@ -117,9 +120,9 @@ public class ProdutoView extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), vlrCompraProdutoField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        vlrCompraProdutoLabel.setText("Vlr Compra Produto:");
+        vlrCompraProdutoLabel.setText("Vlr Compra:");
 
-        vlrVendaProdutoLabel.setText("Vlr Venda Produto:");
+        vlrVendaProdutoLabel.setText("Vlr Venda:");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.criticoProduto}"), criticoProdutoField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue(null);
@@ -139,6 +142,13 @@ public class ProdutoView extends JPanel {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), descricaoProdutoField, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
+        jComboBox1.setRenderer(unidadeListCellRenderer1);
+
+        org.jdesktop.swingbinding.JComboBoxBinding jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, unidadeList2, jComboBox1);
+        bindingGroup.addBinding(jComboBoxBinding);
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.codUnidade}"), jComboBox1, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"));
+        bindingGroup.addBinding(binding);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -156,14 +166,14 @@ public class ProdutoView extends JPanel {
                     .addComponent(criticoProdutoLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(codProdutoField, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                    .addComponent(codUnidadeField, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                    .addComponent(codFornecedorField, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                    .addComponent(descricaoProdutoField, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                    .addComponent(vlrCompraProdutoField, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                    .addComponent(vlrVendaProdutoField, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                    .addComponent(estoqueProdutoField, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                    .addComponent(criticoProdutoField, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE))
+                    .addComponent(codProdutoField, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                    .addComponent(codFornecedorField, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                    .addComponent(descricaoProdutoField, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                    .addComponent(vlrCompraProdutoField, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                    .addComponent(vlrVendaProdutoField, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                    .addComponent(estoqueProdutoField, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                    .addComponent(criticoProdutoField, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -176,7 +186,7 @@ public class ProdutoView extends JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(codUnidadeLabel)
-                    .addComponent(codUnidadeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(codFornecedorLabel)
@@ -218,8 +228,8 @@ public class ProdutoView extends JPanel {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,10 +243,10 @@ public class ProdutoView extends JPanel {
 
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, list, masterTable);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${codProduto}"));
-        columnBinding.setColumnName("Cod Produto");
+        columnBinding.setColumnName("Código");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${codUnidade.descricaoUnidade}"));
-        columnBinding.setColumnName("Cod Unidade");
+        columnBinding.setColumnName("Unidade");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${codFornecedor}"));
         columnBinding.setColumnName("Cod Fornecedor");
@@ -254,7 +264,7 @@ public class ProdutoView extends JPanel {
         columnBinding.setColumnName("Estoque Produto");
         columnBinding.setColumnClass(Integer.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${criticoProduto}"));
-        columnBinding.setColumnName("Critico Produto");
+        columnBinding.setColumnName("Estoque critico");
         columnBinding.setColumnClass(Integer.class);
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
@@ -266,7 +276,7 @@ public class ProdutoView extends JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+                .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -282,25 +292,28 @@ public class ProdutoView extends JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(newButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(deleteButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(refreshButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(saveButton)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                        .addComponent(newButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deleteButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(refreshButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(saveButton)
+                        .addGap(91, 91, 91))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGap(56, 56, 56))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(20, 20, 20))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(66, 66, 66))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteButton, newButton, refreshButton, saveButton});
@@ -310,11 +323,11 @@ public class ProdutoView extends JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(76, 76, 76)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton)
                     .addComponent(refreshButton)
@@ -395,7 +408,6 @@ public class ProdutoView extends JPanel {
     private javax.swing.JLabel codFornecedorLabel;
     private javax.swing.JTextField codProdutoField;
     private javax.swing.JLabel codProdutoLabel;
-    private javax.swing.JTextField codUnidadeField;
     private javax.swing.JLabel codUnidadeLabel;
     private javax.swing.JTextField criticoProdutoField;
     private javax.swing.JLabel criticoProdutoLabel;
@@ -405,6 +417,7 @@ public class ProdutoView extends JPanel {
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JTextField estoqueProdutoField;
     private javax.swing.JLabel estoqueProdutoLabel;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -418,6 +431,13 @@ public class ProdutoView extends JPanel {
     private javax.swing.JButton refreshButton;
     private br.com.siscom.converter.RowSorterToStringConverter rowSorterToStringConverter1;
     private javax.swing.JButton saveButton;
+    private java.util.List<br.com.siscom.bean.Unidade> unidadeList;
+    private java.util.List<br.com.siscom.bean.Unidade> unidadeList1;
+    private java.util.List<br.com.siscom.bean.Unidade> unidadeList2;
+    private br.com.siscom.renderer.UnidadeListCellRenderer unidadeListCellRenderer1;
+    private javax.persistence.Query unidadeQuery;
+    private javax.persistence.Query unidadeQuery1;
+    private javax.persistence.Query unidadeQuery2;
     private javax.swing.JTextField vlrCompraProdutoField;
     private javax.swing.JLabel vlrCompraProdutoLabel;
     private javax.swing.JTextField vlrVendaProdutoField;

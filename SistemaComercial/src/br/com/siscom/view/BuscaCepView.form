@@ -23,7 +23,7 @@
         <Property name="observable" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;br.com.siscom.view.CorreiosCeps&gt;"/>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;br.com.siscom.bean.CorreiosCeps&gt;"/>
       </AuxValues>
     </Component>
     <Component class="br.com.siscom.converter.RowSorterToStringConverter" name="rowSorterToStringConverter1">

@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package br.com.siscom.view;
+package br.com.siscom.bean;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;

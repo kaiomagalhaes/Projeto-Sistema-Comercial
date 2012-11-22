@@ -204,7 +204,7 @@ public class TipoPgtoView extends JPanel {
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new TipoPgtoView());
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+          //      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
                 frame.setTitle(args[0]);

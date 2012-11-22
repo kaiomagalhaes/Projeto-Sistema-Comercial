@@ -156,6 +156,11 @@ public class Menu extends javax.swing.JFrame {
         jMnuFuncionario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         jMnuFuncionario.setMnemonic('n');
         jMnuFuncionario.setText("Funcionário");
+        jMnuFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuFuncionarioActionPerformed(evt);
+            }
+        });
         mnuCadastro.add(jMnuFuncionario);
         mnuCadastro.add(jSeparator3);
 
@@ -172,6 +177,11 @@ public class Menu extends javax.swing.JFrame {
         jMnuPlanoContas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
         jMnuPlanoContas.setMnemonic('l');
         jMnuPlanoContas.setText("Plano de contas");
+        jMnuPlanoContas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuPlanoContasActionPerformed(evt);
+            }
+        });
         mnuCadastro.add(jMnuPlanoContas);
 
         jMnuTipoPagRecebimento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
@@ -326,7 +336,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMnuTipoPagRecebimentoActionPerformed
 
     private void jMnuClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuClientesActionPerformed
-        
+
         String[] args = new String[1];
         args[0] = "Cadastro de cliente";
 
@@ -335,7 +345,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMnuClientesActionPerformed
 
     private void jMnuFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuFornecedoresActionPerformed
-        
+
         String[] args = new String[1];
         args[0] = "Cadastro de fornecedores";
 
@@ -344,22 +354,41 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMnuFornecedoresActionPerformed
 
     private void jMnuUnidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuUnidadesActionPerformed
-       
+
         String[] args = new String[1];
         args[0] = "Cadastro de unidades";
 
-     UnidadeView.main(args);
+        UnidadeView.main(args);
         
     }//GEN-LAST:event_jMnuUnidadesActionPerformed
 
     private void jMnuProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuProdutosActionPerformed
+
+        String[] args = new String[1];
+        args[0] = "Cadastro de produtos";
+
+        ProdutoView.main(args);
+        
+    }//GEN-LAST:event_jMnuProdutosActionPerformed
+
+    private void jMnuPlanoContasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuPlanoContasActionPerformed
+
+        String[] args = new String[1];
+        args[0] = "Cadastro de produtos";
+
+        PlanoContaView.main(args);
+        
+    }//GEN-LAST:event_jMnuPlanoContasActionPerformed
+
+    private void jMnuFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuFuncionarioActionPerformed
        
         String[] args = new String[1];
         args[0] = "Cadastro de produtos";
 
-      ProdutoView.main(args);
+        FuncionarioView.main(args);
         
-    }//GEN-LAST:event_jMnuProdutosActionPerformed
+        
+    }//GEN-LAST:event_jMnuFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments

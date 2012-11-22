@@ -165,7 +165,7 @@ public class BuscaCepView extends JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
-    private java.util.List<br.com.siscom.view.CorreiosCeps> list;
+    private java.util.List<br.com.siscom.bean.CorreiosCeps> list;
     private javax.swing.JScrollPane masterScrollPane;
     private javax.swing.JTable masterTable;
     private javax.persistence.Query query;

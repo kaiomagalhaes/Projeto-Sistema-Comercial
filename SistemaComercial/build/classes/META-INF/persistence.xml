@@ -10,7 +10,10 @@
     <class>br.com.siscom.bean.Fornecedor</class>
     <class>br.com.siscom.bean.Produto</class>
     <class>br.com.siscom.bean.Unidade</class>
-    <class>br.com.siscom.view.CorreiosCeps</class>
+    <class>br.com.siscom.bean.CorreiosCeps</class>
+    <class>br.com.siscom.bean.PlanoConta</class>
+    <class>br.com.siscom.bean.Departamento</class>
+    <class>br.com.siscom.bean.Funcionario</class>
     <properties>
       <property name="toplink.jdbc.user" value="root"/>
       <property name="toplink.jdbc.password" value="12345"/>

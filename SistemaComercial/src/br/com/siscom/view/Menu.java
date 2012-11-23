@@ -5,6 +5,8 @@
  */
 package br.com.siscom.view;
 
+import br.com.siscom.view.MovimentoVenda;
+
 /**
  *
  * @author  Kaio
@@ -215,6 +217,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMnuVendas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
         jMnuVendas.setText("Vendas");
+        jMnuVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuVendasActionPerformed(evt);
+            }
+        });
         mnuMovimento.add(jMnuVendas);
 
         MnuControleEstoque.setText("Controle de estoque");
@@ -381,7 +388,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMnuPlanoContasActionPerformed
 
     private void jMnuFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuFuncionarioActionPerformed
-       
+
         String[] args = new String[1];
         args[0] = "Cadastro de produtos";
 
@@ -389,6 +396,15 @@ public class Menu extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jMnuFuncionarioActionPerformed
+
+    private void jMnuVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuVendasActionPerformed
+
+        String[] args = new String[1];
+        args[0] = "Cadastro de produtos";
+
+        MovimentoVenda.main(args);
+        
+    }//GEN-LAST:event_jMnuVendasActionPerformed
 
     /**
      * @param args the command line arguments

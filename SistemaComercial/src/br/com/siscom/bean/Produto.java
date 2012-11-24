@@ -158,7 +158,7 @@ public class Produto implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.Produto[codProduto=" + codProduto + "]";
+        return "br.com.siscom.bean.Produto[codProduto=" + codProduto + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

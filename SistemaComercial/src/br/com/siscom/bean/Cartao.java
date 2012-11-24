@@ -96,7 +96,7 @@ public class Cartao implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.Cartao[codCartao=" + codCartao + "]";
+        return "br.com.siscom.bean.Cartao[codCartao=" + codCartao + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

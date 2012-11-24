@@ -41,6 +41,18 @@ public class VendaDet implements Serializable {
     @ManyToOne
     private VendaCab vendaCab;
 
+    @Transient
+    private String descricaoProduto;
+
+    public void setDescricaoProduto(String descricaoProduto) {
+        this.descricaoProduto = descricaoProduto;
+    }
+
+    public String getDescricaoProduto() {
+        return descricaoProduto;
+    }
+    
+    
     public VendaDet() {
     }
 
@@ -89,6 +101,7 @@ public class VendaDet implements Serializable {
         this.vlrTotalVendaDet = vlrTotalVendaDet;
         changeSupport.firePropertyChange("vlrTotalVendaDet", oldVlrTotalVendaDet, vlrTotalVendaDet);
     }
+    
 
     public VendaCab getVendaCab() {
         return vendaCab;
@@ -122,7 +135,7 @@ public class VendaDet implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.VendaDet[vendaDetPK=" + vendaDetPK + "]";
+        return "br.com.siscom.bean.VendaDet[vendaDetPK=" + vendaDetPK + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

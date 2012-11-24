@@ -84,7 +84,7 @@ public class TipoPgto implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.TipoPgto[codTipoPgto=" + codTipoPgto + "]";
+        return "br.com.siscom.bean.TipoPgto[codTipoPgto=" + codTipoPgto + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

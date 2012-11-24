@@ -160,7 +160,7 @@ public class Funcionario implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.Funcionario[codFuncionario=" + codFuncionario + "]";
+        return "br.com.siscom.bean.Funcionario[codFuncionario=" + codFuncionario + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

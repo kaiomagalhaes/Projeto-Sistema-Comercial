@@ -84,7 +84,7 @@ public class Unidade implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.Unidade[codUnidade=" + codUnidade + "]";
+        return "br.com.siscom.bean.Unidade[codUnidade=" + codUnidade + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

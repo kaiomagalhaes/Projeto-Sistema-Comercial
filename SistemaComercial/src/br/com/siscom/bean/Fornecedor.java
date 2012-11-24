@@ -276,7 +276,7 @@ public class Fornecedor implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.Fornecedor[codFornecedor=" + codFornecedor + "]";
+        return "br.com.siscom.bean.Fornecedor[codFornecedor=" + codFornecedor + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

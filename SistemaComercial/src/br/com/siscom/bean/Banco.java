@@ -132,7 +132,7 @@ public class Banco implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.Banco[codBanco=" + codBanco + "]";
+        return "br.com.siscom.bean.Banco[codBanco=" + codBanco + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

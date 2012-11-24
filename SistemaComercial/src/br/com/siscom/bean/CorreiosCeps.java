@@ -142,7 +142,7 @@ public class CorreiosCeps implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.CorreiosCeps[id=" + id + "]";
+        return "br.com.siscom.bean.CorreiosCeps[id=" + id + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

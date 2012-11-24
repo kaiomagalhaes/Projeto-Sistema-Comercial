@@ -160,7 +160,7 @@ public class ClienteEndereco implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.ClienteEndereco[codEndereco=" + codEndereco + "]";
+        return "br.com.siscom.bean.ClienteEndereco[codEndereco=" + codEndereco + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

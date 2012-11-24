@@ -235,7 +235,7 @@ public class VendaCab implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.VendaCab[codVendaCab=" + codVendaCab + "]";
+        return "br.com.siscom.bean.VendaCab[codVendaCab=" + codVendaCab + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

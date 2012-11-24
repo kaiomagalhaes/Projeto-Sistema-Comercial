@@ -70,7 +70,7 @@ public class VendaDetPK implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.VendaDetPK[codVendaCab=" + codVendaCab + ", codProduto=" + codProduto + "]";
+        return "br.com.siscom.bean.VendaDetPK[codVendaCab=" + codVendaCab + ", codProduto=" + codProduto + "]";
     }
 
 }

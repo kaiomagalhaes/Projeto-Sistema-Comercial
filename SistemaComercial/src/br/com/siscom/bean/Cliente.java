@@ -270,7 +270,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.Cliente[codCliente=" + codCliente + "]";
+        return "br.com.siscom.bean.Cliente[codCliente=" + codCliente + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

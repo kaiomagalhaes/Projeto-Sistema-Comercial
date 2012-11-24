@@ -84,7 +84,7 @@ public class Departamento implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.siscom.view.Departamento[codDepartamento=" + codDepartamento + "]";
+        return "br.com.siscom.bean.Departamento[codDepartamento=" + codDepartamento + "]";
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {

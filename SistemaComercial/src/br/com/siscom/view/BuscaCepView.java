@@ -35,7 +35,6 @@ public class BuscaCepView extends JPanel {
         saveButton = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         FormListener formListener = new FormListener();
 
@@ -64,7 +63,7 @@ public class BuscaCepView extends JPanel {
         jTableBinding.bind();
         masterScrollPane.setViewportView(masterTable);
 
-        saveButton.setText("Save");
+        saveButton.setText("Importar");
         saveButton.addActionListener(formListener);
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${rowSorter}"), jTextField1, org.jdesktop.beansbinding.BeanProperty.create("text"));
@@ -75,26 +74,20 @@ public class BuscaCepView extends JPanel {
 
         jLabel1.setText("Localizar:");
 
-        jButton1.setText("Importar");
-        jButton1.addActionListener(formListener);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(saveButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
+                        .addComponent(saveButton)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -104,11 +97,9 @@ public class BuscaCepView extends JPanel {
                 .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
                     .addComponent(jLabel1)
+                    .addComponent(saveButton)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(131, 131, 131)
-                .addComponent(saveButton)
                 .addContainerGap())
         );
 
@@ -123,9 +114,6 @@ public class BuscaCepView extends JPanel {
             if (evt.getSource() == jTextField1) {
                 BuscaCepView.this.jTextField1ActionPerformed(evt);
             }
-            else if (evt.getSource() == jButton1) {
-                BuscaCepView.this.jButton1ActionPerformed(evt);
-            }
             else if (evt.getSource() == saveButton) {
                 BuscaCepView.this.saveButtonActionPerformed(evt);
             }
@@ -136,19 +124,13 @@ public class BuscaCepView extends JPanel {
         
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        FornecedorView.fv.setCepFornecedorField((String) masterTable.getValueAt(masterTable.getSelectedRow(), 2));      
+        FornecedorView.fv.setCepFornecedorField((String) masterTable.getValueAt(masterTable.getSelectedRow(), 2));
         FornecedorView.fv.setBairroFornecedorField((String) masterTable.getValueAt(masterTable.getSelectedRow(), 3));
         FornecedorView.fv.setCidadeFornecedorField((String) masterTable.getValueAt(masterTable.getSelectedRow(), 4));
         FornecedorView.fv.setUfFornecedorField((String) masterTable.getValueAt(masterTable.getSelectedRow(), 5));
-
-        frame.setVisible(false);
         
+        frame.setVisible(false);
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private class TableSelectionListener implements ListSelectionListener {
@@ -162,7 +144,6 @@ public class BuscaCepView extends JPanel {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.persistence.EntityManager entityManager;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
     private java.util.List<br.com.siscom.bean.CorreiosCeps> list;

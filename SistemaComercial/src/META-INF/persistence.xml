@@ -16,6 +16,14 @@
     <class>br.com.siscom.bean.Funcionario</class>
     <class>br.com.siscom.bean.VendaCab</class>
     <class>br.com.siscom.bean.VendaDet</class>
+    <class>br.com.siscom.bean.OrcCab</class>
+    <class>br.com.siscom.bean.OrcDet</class>
+    <class>br.com.siscom.bean.CotDet</class>
+    <class>br.com.siscom.bean.PedidoDet</class>
+    <class>br.com.siscom.bean.ReqDet</class>
+    <class>br.com.siscom.bean.PedidoCab</class>
+    <class>br.com.siscom.bean.CotCab</class>
+    <class>br.com.siscom.bean.ReqCab</class>
     <properties>
       <property name="toplink.jdbc.user" value="root"/>
       <property name="toplink.jdbc.password" value="12345"/>

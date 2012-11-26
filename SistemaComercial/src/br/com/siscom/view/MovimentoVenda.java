@@ -17,7 +17,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 public class MovimentoVenda extends JPanel {
-    
+
     public MovimentoVenda() {
         initComponents();
         TableSelectionListener listener = new TableSelectionListener();
@@ -26,7 +26,7 @@ public class MovimentoVenda extends JPanel {
         entityManager.getTransaction().begin();
 
     }
-    
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -128,7 +128,7 @@ public class MovimentoVenda extends JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(detailScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE)
+                .addComponent(detailScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -318,7 +318,7 @@ public class MovimentoVenda extends JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 571, Short.MAX_VALUE)))
-                .addGap(175, 175, 175))
+                .addGap(11, 11, 11))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -416,14 +416,14 @@ public class MovimentoVenda extends JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(newButton, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                .addComponent(newButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3)
-                .addGap(36, 36, 36))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -490,23 +490,16 @@ public class MovimentoVenda extends JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(masterScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(masterScrollPane, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, 0, 633, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -523,8 +516,7 @@ public class MovimentoVenda extends JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -571,14 +563,15 @@ public class MovimentoVenda extends JPanel {
             }
         }
     }// </editor-fold>//GEN-END:initComponents
-
     private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
+
         br.com.siscom.bean.VendaCab V = new br.com.siscom.bean.VendaCab();
         entityManager.persist(V);
         list.add(V);
-        int row = list.size()-1;
+        int row = list.size() - 1;
         masterTable.setRowSelectionInterval(row, row);
         masterTable.scrollRectToVisible(masterTable.getCellRect(row, 0, true));
+        
     }//GEN-LAST:event_newButtonActionPerformed
 
     private void deleteDetailButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteDetailButtonActionPerformed
@@ -587,11 +580,13 @@ public class MovimentoVenda extends JPanel {
         Collection<br.com.siscom.bean.VendaDet> vs = V.getVendaDetCollection();
         int[] selected = detailTable.getSelectedRows();
         List<br.com.siscom.bean.VendaDet> toRemove = new ArrayList<br.com.siscom.bean.VendaDet>(selected.length);
-        for (int idx=0; idx<selected.length; idx++) {
+        for (int idx = 0; idx < selected.length; idx++) {
             selected[idx] = detailTable.convertRowIndexToModel(selected[idx]);
             int count = 0;
             Iterator<br.com.siscom.bean.VendaDet> iter = vs.iterator();
-            while (count++ < selected[idx]) iter.next();
+            while (count++ < selected[idx]) {
+                iter.next();
+            }
             br.com.siscom.bean.VendaDet v = iter.next();
             toRemove.add(v);
             entityManager.remove(v);
@@ -610,14 +605,16 @@ public class MovimentoVenda extends JPanel {
         entityManager.getTransaction().rollback();
         entityManager.getTransaction().begin();
         list.clear();
-        
+
         list.addAll(query.getResultList());
+        
     }//GEN-LAST:event_refreshButtonActionPerformed
 
     private void newDetailButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newDetailButtonActionPerformed
         entityManager.getTransaction().commit();
         entityManager.getTransaction().begin();
-        
+
+ 
         int index = masterTable.getSelectedRow();
         VendaCab V = list.get(masterTable.convertRowIndexToModel(index));
         Collection<VendaDet> vs = V.getVendaDetCollection();
@@ -627,77 +624,75 @@ public class MovimentoVenda extends JPanel {
         }
         br.com.siscom.bean.VendaDet v = new br.com.siscom.bean.VendaDet();
         VendaDetPK vpk = new VendaDetPK();
-        
 
         vpk.setCodVendaCab(V.getCodVendaCab());
         v.setVendaDetPK(vpk);
 
-        ImportaProduto ip = new ImportaProduto(null,true);
+        ImportaProduto ip = new ImportaProduto(null, true);
         ip.recebeObjeto(v);
         ip.setVisible(true);
         v.setVendaCab(V);
-        
         produtoQuery = entityManager.createNamedQuery("Produto.findByCodProduto");
         produtoQuery.setParameter("codProduto", v.getVendaDetPK().getCodProduto());
-    
+
         List<Produto> data = produtoQuery.getResultList();
-        
+
         v.setDescricaoProduto(data.get(0).getDescricaoProduto());
-        
+
         entityManager.persist(v);
 
         vs.add(v);
         masterTable.clearSelection();
         masterTable.setRowSelectionInterval(index, index);
-        
-        int row = vs.size()-1;
+
+        int row = vs.size() - 1;
         System.out.println(vs.size());
         detailTable.setRowSelectionInterval(row, row);
-        
+
         detailTable.scrollRectToVisible(detailTable.getCellRect(row, 0, true));
-        
         
     }//GEN-LAST:event_newDetailButtonActionPerformed
 
+    
     private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
-        
+
         queryCliente = entityManager.createNamedQuery("Cliente.findByCodCliente");
         queryCliente.setParameter("codCliente", Integer.parseInt(jTextField2.getText()));
-    
+
         List<Cliente> data = queryCliente.getResultList();
-        
+
         jTextField3.setText(data.get(0).getNomeCliente());
     }//GEN-LAST:event_jTextField2FocusLost
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         Double valorTotal = 0.0;
-    Double totalGeral = 0.0;
-    
-    int index = masterTable.getSelectedRow();
-    br.com.siscom.bean.VendaCab V = list.get(masterTable.convertRowIndexToModel(index));
-    Collection<br.com.siscom.bean.VendaDet> vs = V.getVendaDetCollection();
-    
-    for (VendaDet vendaDet : vs) {
-        if (vendaDet.getQtdeVendaDet() == null) {
-            vendaDet.setQtdeVendaDet(1);
+        Double valorTotal = 0.0;
+        Double totalGeral = 0.0;
+
+        int index = masterTable.getSelectedRow();
+        br.com.siscom.bean.VendaCab V = list.get(masterTable.convertRowIndexToModel(index));
+        Collection<br.com.siscom.bean.VendaDet> vs = V.getVendaDetCollection();
+
+        for (VendaDet vendaDet : vs) {
+            if (vendaDet.getQtdeVendaDet() == null) {
+                vendaDet.setQtdeVendaDet(1);
+            }
+            vendaDet.setVlrTotalVendaDet(vendaDet.getVlrUnitVendaDet() * vendaDet.getQtdeVendaDet());
+            valorTotal = valorTotal + vendaDet.getVlrTotalVendaDet();
         }
-        vendaDet.setVlrTotalVendaDet(vendaDet.getVlrUnitVendaDet() * vendaDet.getQtdeVendaDet());
-        valorTotal = valorTotal + vendaDet.getVlrTotalVendaDet();
-    }
-    
-    if (jTextField10.getText().equals("")) {
-        jTextField10.setText("0");
-    }
-    
-    totalGeral = valorTotal - Double.parseDouble(jTextField10.getText());
-    
-    jTextField12.setText(String.valueOf(valorTotal));
-    jTextField11.setText(String.valueOf(totalGeral));
+
+        if (jTextField10.getText().equals("")) {
+            jTextField10.setText("0");
+        }
+
+        totalGeral = valorTotal - Double.parseDouble(jTextField10.getText());
+
+        jTextField12.setText(String.valueOf(valorTotal));
+        jTextField11.setText(String.valueOf(totalGeral));
     
     }//GEN-LAST:event_jButton3ActionPerformed
-    
+
     private class TableSelectionListener implements ListSelectionListener {
-        
+
         public void valueChanged(ListSelectionEvent e) {
             if (e.getSource() == masterTable.getSelectionModel()) {
                 boolean enabled = (masterTable.getSelectedRow() != -1);
@@ -706,9 +701,7 @@ public class MovimentoVenda extends JPanel {
                 deleteDetailButton.setEnabled(detailTable.getSelectedRow() != -1);
             }
         }
-        
     }
-                        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.util.List<br.com.siscom.bean.Cartao> cartaoList;
     private javax.persistence.Query cartaoQuery;
@@ -768,17 +761,16 @@ public class MovimentoVenda extends JPanel {
     private br.com.siscom.renderer.UnidadeListCellRenderer unidadeListCellRenderer1;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
-    
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 JFrame frame = new JFrame();
                 frame.setContentPane(new MovimentoVenda());
-          //      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                //      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
             }
         });
     }
-    
 }

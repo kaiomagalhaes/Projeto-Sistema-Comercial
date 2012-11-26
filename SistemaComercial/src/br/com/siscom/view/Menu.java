@@ -6,6 +6,7 @@
 package br.com.siscom.view;
 
 import br.com.siscom.view.MovimentoVenda;
+import br.com.siscom.view.compras.CotacaoVenda;
 
 /**
  *
@@ -61,6 +62,7 @@ public class Menu extends javax.swing.JFrame {
         jMnuEmissaoCheques = new javax.swing.JMenuItem();
         jMnuConciliacaoCheques = new javax.swing.JMenuItem();
         jMnuMovimentoBanco = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         mnuUtilitarios = new javax.swing.JMenu();
         jMnuCalculadora = new javax.swing.JMenuItem();
         jMnuCalendario = new javax.swing.JMenuItem();
@@ -246,6 +248,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMnuCotacao.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
         jMnuCotacao.setText("Cotação");
+        jMnuCotacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuCotacaoActionPerformed(evt);
+            }
+        });
         MnuCompras.add(jMnuCotacao);
 
         jMnuConfirmaCotacao.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
@@ -275,6 +282,15 @@ public class Menu extends javax.swing.JFrame {
         MnuTesourariaBanco.add(jMnuMovimentoBanco);
 
         mnuMovimento.add(MnuTesourariaBanco);
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_5, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setText("Cadastro de orçamento");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        mnuMovimento.add(jMenuItem1);
 
         mnuSuperior.add(mnuMovimento);
 
@@ -406,6 +422,25 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMnuVendasActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       
+        String[] args = new String[1];
+        args[0] = "Cadastro de produtos";
+
+        MovimentoOrcamentoVenda.main(args);
+        
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMnuCotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuCotacaoActionPerformed
+       
+        String[] args = new String[1];
+        args[0] = "Cadastro de produtos";
+
+        CotacaoVenda.main(args);
+               
+    }//GEN-LAST:event_jMnuCotacaoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -422,6 +457,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu MnuControleEstoque;
     private javax.swing.JMenu MnuSistemaSeguranca;
     private javax.swing.JMenu MnuTesourariaBanco;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMnuAtualizacaoPrecos;
     private javax.swing.JMenuItem jMnuCalculadora;
     private javax.swing.JMenuItem jMnuCalendario;

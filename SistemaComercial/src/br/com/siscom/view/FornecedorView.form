@@ -46,10 +46,10 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="abaPanel" alignment="0" min="-2" pref="556" max="-2" attributes="0"/>
+                  <Component id="abaPanel" alignment="0" pref="609" max="32767" attributes="0"/>
                   <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -346,26 +346,21 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="contatoFornecedorLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jPanel1" min="-2" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jPanel1" alignment="0" min="-2" max="32767" attributes="0"/>
+                          <Component id="contatoFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
                               <Component id="contatoFornecedorField" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                              <Component id="jPanel4" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -377,15 +372,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel4" alignment="0" min="-2" pref="206" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="274" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="contatoFornecedorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="contatoFornecedorField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jPanel4" min="-2" pref="198" max="-2" attributes="1"/>
+                          <Component id="jPanel1" min="-2" max="-2" attributes="1"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="249" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="contatoFornecedorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="contatoFornecedorField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -414,35 +407,40 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="bairroFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="cnpjFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="siteFornecedorLabel" min="-2" max="-2" attributes="0"/>
-                              <Component id="celularFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="ufFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="nomeFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="cpfFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="tfCpf" min="-2" pref="87" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="bairroFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cnpjFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="siteFornecedorLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="celularFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ufFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nomeFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cpfFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rgFornecedorLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rgFornecedorField" pref="52" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="tfCpf" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="rgFornecedorLabel" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="rgFornecedorField" pref="52" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="nomeFornecedorField" pref="165" max="32767" attributes="1"/>
+                                      <Component id="celularFornecedorField" pref="165" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="ufFornecedorField" min="-2" pref="38" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="cepFornecedorLabel" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="cepFornecedorField" pref="96" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="siteFornecedorField" alignment="0" pref="165" max="32767" attributes="0"/>
+                                      <Component id="bairroFornecedorField" pref="165" max="32767" attributes="0"/>
+                                      <Component id="cnpjFornecedorField" alignment="0" pref="165" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="nomeFornecedorField" pref="165" max="32767" attributes="1"/>
-                              <Component id="celularFornecedorField" pref="165" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="ufFornecedorField" min="-2" pref="38" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cepFornecedorLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cepFornecedorField" pref="96" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="siteFornecedorField" alignment="0" pref="165" max="32767" attributes="0"/>
-                              <Component id="bairroFornecedorField" pref="165" max="32767" attributes="0"/>
-                              <Component id="cnpjFornecedorField" alignment="0" pref="165" max="32767" attributes="0"/>
+                              <Component id="jButton2" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -491,6 +489,8 @@
                               <Component id="celularFornecedorField" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jButton2" min="-2" max="-2" attributes="1"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -623,6 +623,14 @@
                     <Property name="text" type="java.lang.String" value="Nome:"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JButton" name="jButton2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="BuscarCEP"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel4">
@@ -635,19 +643,15 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="faxFornecedorLabel" min="-2" max="-2" attributes="0"/>
                               <Component id="foneFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="emailFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="cidadeFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="enderecoFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="orgaoRgFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="orgaoRgFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="enderecoFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cidadeFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="emailFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jComboBox1" min="-2" pref="59" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jComboBox1" min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="enderecoFornecedorField" alignment="0" max="32767" attributes="1"/>
                               <Component id="emailFornecedorField" alignment="0" max="32767" attributes="1"/>
                               <Component id="cidadeFornecedorField" alignment="0" max="32767" attributes="1"/>
@@ -655,7 +659,7 @@
                               <Component id="foneFornecedorField" alignment="0" pref="135" max="32767" attributes="1"/>
                               <Component id="orgaoRgFornecedorField" alignment="0" max="32767" attributes="1"/>
                           </Group>
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="74" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -666,27 +670,26 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="1"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="orgaoRgFornecedorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="orgaoRgFornecedorField" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="enderecoFornecedorLabel" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="orgaoRgFornecedorField" min="-2" max="-2" attributes="0"/>
+                              <Component id="orgaoRgFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="enderecoFornecedorField" min="-2" max="-2" attributes="0"/>
+                              <Component id="enderecoFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="cidadeFornecedorField" min="-2" max="-2" attributes="0"/>
+                              <Component id="cidadeFornecedorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="cidadeFornecedorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="cidadeFornecedorField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="emailFornecedorLabel" min="-2" max="-2" attributes="0"/>
-                              <Component id="emailFornecedorField" min="-2" max="-2" attributes="0"/>
+                              <Component id="emailFornecedorField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="emailFornecedorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -806,14 +809,6 @@
                     </BindingProperty>
                     <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="cidadeFornecedorField" targetPath="enabled" updateStrategy="1" immediately="false"/>
                   </BindingProperties>
-                </Component>
-                <Component class="javax.swing.JButton" name="jButton2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="BuscarCEP"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>

@@ -58,6 +58,7 @@ public class ClienteView extends JPanel {
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nomeCliente}"));
         columnBinding.setColumnName("Nome");
         columnBinding.setColumnClass(String.class);
+        columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${cpfCliente}"));
         columnBinding.setColumnName("CPF");
         columnBinding.setColumnClass(String.class);
@@ -103,6 +104,7 @@ public class ClienteView extends JPanel {
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
         masterScrollPane.setViewportView(masterTable);
+        masterTable.getColumnModel().getColumn(0).setPreferredWidth(250);
 
         masterTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
 

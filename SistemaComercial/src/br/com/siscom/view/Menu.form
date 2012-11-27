@@ -215,6 +215,9 @@
                     <Property name="mnemonic" type="int" value="105"/>
                     <Property name="text" type="java.lang.String" value="Requisi&#xe7;&#xe3;o"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMnuRequisicaoActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="jMnuCotacao">
                   <Properties>
@@ -234,6 +237,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Confirma cota&#xe7;&#xe3;o"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMnuConfirmaCotacaoActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="jMnuPedido">
                   <Properties>
@@ -243,6 +249,9 @@
                     <Property name="mnemonic" type="int" value="101"/>
                     <Property name="text" type="java.lang.String" value="Pedido"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMnuPedidoActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>

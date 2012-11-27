@@ -6,7 +6,10 @@
 package br.com.siscom.view;
 
 import br.com.siscom.view.MovimentoVenda;
-import br.com.siscom.view.compras.CotacaoVenda;
+import br.com.siscom.view.compras.ConfirmaCotacaoCompra;
+import br.com.siscom.view.compras.CotacaoCompra;
+import br.com.siscom.view.compras.PedidoCompra;
+import br.com.siscom.view.compras.RequisicaoCompra;
 
 /**
  *
@@ -244,6 +247,11 @@ public class Menu extends javax.swing.JFrame {
         jMnuRequisicao.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
         jMnuRequisicao.setMnemonic('i');
         jMnuRequisicao.setText("Requisição");
+        jMnuRequisicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuRequisicaoActionPerformed(evt);
+            }
+        });
         MnuCompras.add(jMnuRequisicao);
 
         jMnuCotacao.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
@@ -257,11 +265,21 @@ public class Menu extends javax.swing.JFrame {
 
         jMnuConfirmaCotacao.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
         jMnuConfirmaCotacao.setText("Confirma cotação");
+        jMnuConfirmaCotacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuConfirmaCotacaoActionPerformed(evt);
+            }
+        });
         MnuCompras.add(jMnuConfirmaCotacao);
 
         jMnuPedido.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         jMnuPedido.setMnemonic('e');
         jMnuPedido.setText("Pedido");
+        jMnuPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuPedidoActionPerformed(evt);
+            }
+        });
         MnuCompras.add(jMnuPedido);
 
         mnuMovimento.add(MnuCompras);
@@ -423,7 +441,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMnuVendasActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-       
+
         String[] args = new String[1];
         args[0] = "Cadastro de produtos";
 
@@ -433,13 +451,41 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMnuCotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuCotacaoActionPerformed
-       
+
         String[] args = new String[1];
         args[0] = "Cadastro de produtos";
 
-        CotacaoVenda.main(args);
+        CotacaoCompra.main(args);
                
     }//GEN-LAST:event_jMnuCotacaoActionPerformed
+
+    private void jMnuConfirmaCotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuConfirmaCotacaoActionPerformed
+
+        String[] args = new String[1];
+        args[0] = "Cadastro de produtos";
+
+        ConfirmaCotacaoCompra.main(args);
+        
+    }//GEN-LAST:event_jMnuConfirmaCotacaoActionPerformed
+
+    private void jMnuPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuPedidoActionPerformed
+
+        String[] args = new String[1];
+        args[0] = "Cadastro de produtos";
+
+        PedidoCompra.main(args);
+        
+        
+    }//GEN-LAST:event_jMnuPedidoActionPerformed
+
+    private void jMnuRequisicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuRequisicaoActionPerformed
+
+        String[] args = new String[1];
+        args[0] = "Cadastro de produtos";
+
+        RequisicaoCompra.main(args);
+        
+    }//GEN-LAST:event_jMnuRequisicaoActionPerformed
 
     /**
      * @param args the command line arguments

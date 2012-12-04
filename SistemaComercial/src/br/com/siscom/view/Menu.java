@@ -347,7 +347,7 @@ public class Menu extends javax.swing.JFrame {
         setJMenuBar(mnuSuperior);
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-640)/2, (screenSize.height-457)/2, 640, 457);
+        setBounds((screenSize.width-640)/2, (screenSize.height-366)/2, 640, 366);
     }// </editor-fold>//GEN-END:initComponents
     private void jMnuContaBancariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuContaBancariaActionPerformed
         String[] args = new String[1];
